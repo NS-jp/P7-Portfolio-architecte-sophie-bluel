@@ -193,6 +193,8 @@ function Modalcontent2 () {
         if (filesizInMB > 4 ) {
             alert ("Le fichier est trop volumineux. Veuillez sélectionner un fichier de taille inférieure à 4 Mo.");
             Uploadfile.value = "";
+            PreviewImage.style.opacity ="0";
+            UploadBtn.style.opacity = "1";
         } 
     }); 
     
