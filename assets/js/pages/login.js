@@ -1,3 +1,5 @@
+import {sendLoginForm} from "../api.js";
+
 function addEventListenerloginForm (){
     const loginForm = document.querySelector("#login form");
     loginForm.addEventListener("submit", function(event){
@@ -8,11 +10,7 @@ function addEventListenerloginForm (){
         }; 
         const jsonString = JSON.stringify(loginData);
         
-        fetch ("http://localhost:5678/api/users/login", {
-            method: "POST", 
-            headers: {"Content-type": "application/json"}, 
-            body: jsonString
-        })
+        sendLoginForm(jsonString)
         .then (response => response.json())
         .then (login => {
           if (login.token){
