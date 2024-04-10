@@ -15,6 +15,14 @@ export async function getCategories () {
     return categories;
 }
 
+export function sendLoginForm(jsonString){
+    return fetch (`${baseURL}/users/login`, {
+        method: "POST", 
+        headers: {"Content-type": "application/json"}, 
+        body: jsonString
+    })
+}
+
 //Remove an selected work from modale unisg the Fetch API
 export function deleteImage(id) {
     return fetch (`${baseURL}/works/${id}`, {
